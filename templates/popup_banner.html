@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popup Banner</title>
+    <style>
+        body{
+            background-image: url('./static/bg.jpeg');
+            background-repeat: no-repeat;
+            background-size: cover; 
+        }
+        .popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: 	#ffffff;
+            padding: 200px;
+            border: 2px solid #333;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            z-index: 9999;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            cursor: pointer;
+        }
+        h1{
+            font-size: 40px;
+            
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="popup">
+        <span class="close-btn" onclick="closePopup()">X</span>
+        <h1>Prediction Result</h1>
+        <p>The uploaded file is predicted as: <strong>{{ prediction }}</strong></p>
+    </div>
+
+    <script>
+        // Function to close the popup
+        function closePopup() {
+            document.querySelector('.popup').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
